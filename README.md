@@ -1,7 +1,6 @@
 # Meal Menu Ordering System
 
-![API CI/CD](https://github.com/username/repo/workflows/API%20CI/CD/badge.svg)
-![DB CI/CD](https://github.com/username/repo/workflows/DB%20CI/CD/badge.svg)
+[![log github events](https://github.com/software-students-fall2024/5-final-5/actions/workflows/event-logger.yml/badge.svg)](https://github.com/software-students-fall2024/5-final-5/actions/workflows/event-logger.yml)
 
 ## Description
 
