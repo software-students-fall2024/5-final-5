@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Meal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <div class="bg-white p-8 rounded shadow-lg w-96">
+        <h1 class="text-2xl font-bold text-center mb-4">Add New Meal</h1>
+        <form action="/add-meal" method="POST">
+            <label for="name" class="block text-gray-700 font-semibold mb-1">Meal Name:</label>
+            <input type="text" name="name" id="name" required class="w-full border rounded p-2 mb-4">
+
+            <label for="description" class="block text-gray-700 font-semibold mb-1">Description:</label>
+            <textarea name="description" id="description" required class="w-full border rounded p-2 mb-4"></textarea>
+
+            <label for="price" class="block text-gray-700 font-semibold mb-1">Price:</label>
+            <input type="number" name="price" id="price" step="0.01" required class="w-full border rounded p-2 mb-4">
+
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full">Add Meal</button>
+        </form>
+        <a href="/menu" class="block text-center mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Back to Menu</a>
+    </div>
+</body>
+</html>
+

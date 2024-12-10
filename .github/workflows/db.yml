@@ -1,0 +1,29 @@
+name: DB CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Build Docker image
+      run: docker build -t username/db .
+
+    - name: Push to DockerHub
+      run: |
+        echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+        docker tag username/db username/db:latest
+        docker push username/db:latest
+
+    - name: Deploy to Digital Ocean
+      run: echo "Deploy DB service here"

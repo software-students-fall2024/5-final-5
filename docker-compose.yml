@@ -1,0 +1,21 @@
+services:
+  api:
+    build: ./api
+    container_name: api_service
+    environment:
+      MONGO_URI: mongodb://admin:password@db:27017/meal_menu
+    ports:
+      - "5001:5000"
+    depends_on:
+      - db
+
+  db:
+    build: ./db
+    container_name: mongo_db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - "27017:27017"
+
+
